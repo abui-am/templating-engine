@@ -77,8 +77,9 @@ function IndexPage() {
         ref={mainContentRef}
         style={{
           maxWidth: MAX_WIDTH,
-          background: `url(${backgroundUrl}) no-repeat center center`,
+          backgroundPosition: 'center',
           backgroundSize: 'cover',
+          backgroundImage: `url(${backgroundUrl})`,
         }}
         className='relative w-full text-white leading-[210%]'
       >
