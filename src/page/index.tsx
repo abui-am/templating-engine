@@ -33,6 +33,7 @@ function IndexPage() {
 
   const fontSize = scaledWidth(48);
   const fontSizeSource = scaledWidth(24);
+  const scale = 2;
 
   const [text, setText] = React.useState<string>('');
   const [highlight, setHighlight] = React.useState<string>('');
@@ -44,12 +45,23 @@ function IndexPage() {
       return;
     }
 
-    htmlToImage.toPng(mainContentRef.current).then(function (dataUrl) {
-      const link = document.createElement('a');
-      link.download = `template-${Date.now()}.png`;
-      link.href = dataUrl;
-      link.click();
-    });
+    htmlToImage
+      .toPng(mainContentRef.current, {
+        height: mainContentRef.current.offsetHeight * scale,
+        width: mainContentRef.current.offsetWidth * scale,
+        style: {
+          transform: 'scale(' + scale + ')',
+          transformOrigin: 'top left',
+          width: mainContentRef.current.offsetHeight + 'px',
+          height: mainContentRef.current.offsetWidth + 'px',
+        },
+      })
+      .then(function (dataUrl) {
+        const link = document.createElement('a');
+        link.download = `template-${Date.now()}.png`;
+        link.href = dataUrl;
+        link.click();
+      });
   };
 
   return (
