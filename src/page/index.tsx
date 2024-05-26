@@ -97,7 +97,7 @@ function IndexPage() {
             justifyContent: 'center',
           }}
         >
-          Sumber: {source}
+          sumber: {source}
         </div>
         <div
           style={{
