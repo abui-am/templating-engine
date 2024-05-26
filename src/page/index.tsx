@@ -78,6 +78,7 @@ function IndexPage() {
         style={{
           maxWidth: MAX_WIDTH,
           background: `url(${backgroundUrl}) no-repeat center center`,
+          backgroundSize: 'cover',
         }}
         className='relative w-full text-white leading-[210%]'
       >
