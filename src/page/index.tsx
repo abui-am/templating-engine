@@ -36,6 +36,7 @@ function IndexPage() {
   const scale = 2;
 
   const [text, setText] = React.useState<string>('');
+  const [category, setCategory] = React.useState<string>('');
   const [highlight, setHighlight] = React.useState<string>('');
   const [backgroundUrl, setBackgroundUrl] = React.useState<string>('');
   const [source, setSource] = React.useState<string>('');
@@ -101,6 +102,19 @@ function IndexPage() {
           style={{
             fontSize,
             position: 'absolute',
+            top: scaledWidth(60),
+            right: scaledWidth(60),
+            opacity: 0.5,
+            textShadow: '0 0 10px 0 rgba(0,0,0,0.5)',
+            fontWeight: 'semibold',
+          }}
+        >
+          {category}
+        </div>
+        <div
+          style={{
+            fontSize,
+            position: 'absolute',
             top: scaledWidth(900),
             left: scaledWidth(60),
             right: scaledWidth(60),
@@ -119,7 +133,7 @@ function IndexPage() {
 
       <div className='mt-8'>
         <div>
-          <label>Text</label>
+          <label>Judul</label>
           <Input
             onChange={(e) => {
               setText(e.target.value);
@@ -141,6 +155,14 @@ function IndexPage() {
           <Input
             onChange={(e) => {
               setSource(e.target.value);
+            }}
+          />
+        </div>
+        <div>
+          <label>Kategori</label>
+          <Input
+            onChange={(e) => {
+              setCategory(e.target.value);
             }}
           />
         </div>
