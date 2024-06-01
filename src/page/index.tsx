@@ -28,6 +28,7 @@ function IndexPage() {
     };
   }, []);
   const actualWidth = 1080;
+  const actualHeight = 1350;
 
   const scaledWidth = (width: number) => (contentWidth / actualWidth) * width;
 
@@ -41,7 +42,6 @@ function IndexPage() {
   const [backgroundUrl, setBackgroundUrl] = React.useState<string>('');
   const [source, setSource] = React.useState<string>('');
   const handleSaveImage = () => {
-    console.log('save image', mainContentRef.current);
     if (!mainContentRef.current) {
       return;
     }
@@ -69,20 +69,26 @@ function IndexPage() {
     <div
       style={{
         maxWidth: MAX_WIDTH,
-        padding: '20px 0px',
       }}
-      className='mx-auto p-6'
+      className='mx-auto p-4'
     >
       <div
         ref={mainContentRef}
         style={{
           maxWidth: MAX_WIDTH,
-          backgroundPosition: 'center',
-          backgroundSize: 'cover',
-          backgroundImage: `url(${backgroundUrl})`,
         }}
-        className='relative w-full text-white leading-[210%]'
+        className='relative w-full text-white '
       >
+        <img
+          src={backgroundUrl}
+          alt='tmp'
+          className='w-full absolute inset-0'
+          style={{
+            height: '100%',
+            objectFit: 'cover',
+            zIndex: -1,
+          }}
+        />
         <div
           style={{
             fontSize: fontSizeSource,
@@ -104,11 +110,11 @@ function IndexPage() {
           style={{
             fontSize,
             position: 'absolute',
-            top: scaledWidth(60),
+            top: scaledWidth(20),
             right: scaledWidth(60),
             opacity: 0.5,
             textShadow: '0 0 10px 0 rgba(0,0,0,0.5)',
-            fontWeight: 'semibold',
+            fontWeight: 'bold',
           }}
         >
           {category}
@@ -120,10 +126,11 @@ function IndexPage() {
             top: scaledWidth(900),
             left: scaledWidth(60),
             right: scaledWidth(60),
+            lineHeight: '1.3',
           }}
         >
           <Highlighter
-            className='font-bold leading-[130%]'
+            className='font-bold'
             highlightClassName={cx(style['highlighted'])}
             searchWords={[highlight]}
             autoEscape={true}
