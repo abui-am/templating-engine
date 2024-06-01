@@ -31,7 +31,7 @@ function IndexPage() {
 
   const scaledWidth = (width: number) => (contentWidth / actualWidth) * width;
 
-  const fontSize = scaledWidth(56);
+  const fontSize = scaledWidth(52);
   const fontSizeSource = scaledWidth(24);
   const scale = 2;
 
@@ -123,7 +123,7 @@ function IndexPage() {
           }}
         >
           <Highlighter
-            className='font-bold leading-[150%]'
+            className='font-bold leading-[130%]'
             highlightClassName={cx(style['highlighted'])}
             searchWords={[highlight]}
             autoEscape={true}
