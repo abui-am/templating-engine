@@ -71,7 +71,7 @@ function IndexPage() {
         maxWidth: MAX_WIDTH,
         padding: '20px 0px',
       }}
-      className='mx-auto'
+      className='mx-auto p-6'
     >
       <div
         ref={mainContentRef}
