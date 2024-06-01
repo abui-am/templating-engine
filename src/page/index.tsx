@@ -78,16 +78,19 @@ function IndexPage() {
         }}
         className='relative w-full text-white '
       >
-        <img
-          src={backgroundUrl}
-          alt='tmp'
-          className='w-full absolute inset-0'
-          style={{
-            height: '100%',
-            objectFit: 'cover',
-            zIndex: -10,
-          }}
-        />
+        {backgroundUrl && (
+          <img
+            src={backgroundUrl}
+            alt='tmp'
+            className='w-full absolute inset-0'
+            style={{
+              height: '100%',
+              objectFit: 'cover',
+              zIndex: -10,
+            }}
+          />
+        )}
+
         <div
           style={{
             fontSize: fontSizeSource,
