@@ -123,7 +123,7 @@ function IndexPage() {
           }}
         >
           <Highlighter
-            className='font-bold'
+            className='font-bold leading-[150%]'
             highlightClassName={cx(style['highlighted'])}
             searchWords={[highlight]}
             autoEscape={true}
