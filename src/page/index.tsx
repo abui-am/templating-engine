@@ -133,7 +133,7 @@ function IndexPage() {
         <img src={base} alt='tmp' className='w-full' />
       </div>
 
-      <div className='mt-8'>
+      <div className='mt-8 flex flex-col gap-4'>
         <div>
           <label>Judul</label>
           <Input
