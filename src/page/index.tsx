@@ -28,7 +28,6 @@ function IndexPage() {
     };
   }, []);
   const actualWidth = 1080;
-  const actualHeight = 1350;
 
   const scaledWidth = (width: number) => (contentWidth / actualWidth) * width;
 
@@ -86,7 +85,7 @@ function IndexPage() {
           style={{
             height: '100%',
             objectFit: 'cover',
-            zIndex: -1,
+            zIndex: -10,
           }}
         />
         <div
