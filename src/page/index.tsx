@@ -31,7 +31,7 @@ function IndexPage() {
 
   const scaledWidth = (width: number) => (contentWidth / actualWidth) * width;
 
-  const fontSize = scaledWidth(48);
+  const fontSize = scaledWidth(56);
   const fontSizeSource = scaledWidth(24);
   const scale = 2;
 
